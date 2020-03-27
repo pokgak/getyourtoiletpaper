@@ -3,37 +3,41 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Item;
 
 class ItemController extends Controller
 {
     public function listItems() {
-        return response()->json([
-            ["id" => 1, "name" => "test", "description" => "hola"],
-            ["id" => 2, "name" => "test2", "description" => "moinmoin"],
-        ]);
+        return Item::all();
     }
 
     public function getItem($id) {
-        return response("Item not found", 404);
+        return Item::findOrFail($id);
     }
 
     public function createNewItem(Request $request) {
-        return response()->json([
-            "id" => $request->id,
-            "name" => $request->name,
-            "description" => $request->description,
-        ]);
+        $item = new Item;
+        $item->name = $request->name;
+        $item->description = $request->description;
+        $item->save();
+
+        return $item;
     }
 
     public function deleteItem($id) {
-        return response("Item not found", 404);
+        Item::findOrFail($id)->delete();
     }
 
     public function updateItem(Request $request) {
-        return response()->json([
-            "id" => $request->id,
-            "name" => $request->name,
-            "description" => $request->description,
-        ]);
+        $item = Item::findOrFail($request->id);
+        if ($request->name) {
+            $item->name = $request->name;
+        }
+        if ($request->description) {
+            $item->description = $request->description;
+        }
+        $item->save();
+
+        return $item;
     }
 }
