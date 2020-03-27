@@ -6,7 +6,7 @@ This is the backend for the GYTP application. It is written using the Laravel fr
 
 We uses Homestead for development. To start the server run `vagrant up` in this directory.
 
-Before using the API, seed the database: `php artisan db:seed --database=mysql`
+Before using the API, create table and seed the database: `php artisan migrate:refresh --seed`
 
 The API is available at `http://homestead.test/api`
 
