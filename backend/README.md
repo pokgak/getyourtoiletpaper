@@ -9,7 +9,8 @@ We uses Homestead for development. To start the server run `vagrant up` in this 
 Available endpoints:
 
 - `/`: Laravel default welcome page
-- `/api/items`: get list of all items
+- `/api/items`:
+    - `GET`: get list of all items
 - `/api/item`:
     - `POST`: create new item
         - expects JSON with "name" AND "description" as keys and string values
