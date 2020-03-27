@@ -4,7 +4,11 @@ This is the backend for the GYTP application. It is written using the Laravel fr
 
 ## Running
 
-We uses Homestead for development. To start the server run `vagrant up` in this directory. The API is available at `http://homestead.test/api`
+We uses Homestead for development. To start the server run `vagrant up` in this directory.
+
+Before using the API, seed the database: `php artisan db:seed --database=mysql`
+
+The API is available at `http://homestead.test/api`
 
 Available endpoints:
 
