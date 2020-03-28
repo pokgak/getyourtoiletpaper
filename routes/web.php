@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Item;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/edit', function () {
-    return view('edit');
+    return view('home', ['items' => Item::all()->toArray()]);
 });

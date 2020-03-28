@@ -38,13 +38,13 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="{{ url('/home') }}">{{ __('Items') }}</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/edit') }}">{{ __('Edit') }}</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
