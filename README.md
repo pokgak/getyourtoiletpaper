@@ -1,8 +1,8 @@
-# GYTP Backend
+# GYTP
 
-This is the backend for the GYTP application. It is written using the Laravel framework.
+The backend is written using the Laravel framework and frontend in Vue.js.
 
-## Running
+## Backend
 
 We uses Homestead for development. To start the server run `vagrant up` in this directory.
 
@@ -23,3 +23,9 @@ Available endpoints:
 - `/api/item/{id}`:
     - `GET`: get item with {id}
     - `DELETE`: delete item with {id}
+
+## Frontend
+
+Create new Vue components in `resources/js/components` and use it in blade files. Don't forget to register the component in `resources/js/app.js` before using.
+
+Compile the public assets after change with `npm run dev` or the HTML will not be updated.
