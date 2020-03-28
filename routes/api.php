@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Controllers\ItemController;
-use App\Item;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
