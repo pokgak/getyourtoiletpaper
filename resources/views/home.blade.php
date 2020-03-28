@@ -6,7 +6,6 @@
         <div class="col">
             <h2>Items</h2>
 
-            <!-- <div class="card-group"> -->
                 <div class="row row-cols-5">
                     <div class="col">
                         <new-item></new-item>
@@ -18,7 +17,6 @@
                     </div>
                 @endforeach
                 </div>
-            <!-- </div> -->
         </div>
     </div>
 </div>
