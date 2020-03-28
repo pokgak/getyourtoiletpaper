@@ -6,7 +6,7 @@
         <div class="col">
             <h2 class="ml-auto">Items</h2>
 
-            <div class="card-group">
+            <!-- <div class="card-group"> -->
                 <div class="row row-cols-5">
                 @foreach ($items as $item)
                     <div class="col">
@@ -14,7 +14,7 @@
                     </div>
                 @endforeach
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 </div>

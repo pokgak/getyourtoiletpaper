@@ -7,8 +7,8 @@
 
         </div>
         <div class="card-footer text-right">
-            <a href="#" class="btn btn-primary">Edit</a>
-            <a href="#" class="btn btn-danger">Remove</a>
+            <a href="#" class="btn btn-primary"><i class="fa fa-pencil-square-o fa-lg" title="Edit Item"></i></a>
+            <a href="#" class="btn btn-danger"><i class="fa fa-trash-o fa-lg" title="Delete Item"></i></a>
         </div>
     </div>
 </template>
