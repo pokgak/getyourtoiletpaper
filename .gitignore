@@ -11,5 +11,8 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 
+# ignore webpack generated
+public/js/app.js
+
 # vagrant
 .vagrant/
