@@ -9,7 +9,7 @@
     <!-- Display mode -->
     <div v-show="!editMode">
       <div class="card-body">
-        <h5 class="card-title">{{ item.name }}</h5>
+        <h5 class="card-title text-uppercase">{{ item.name }}</h5>
         <p class="card-text">{{ item.description }}</p>
       </div>
       <div class="card-footer text-right">
