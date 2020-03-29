@@ -51,7 +51,7 @@
 </template>
 
 <script>
-const baseApiUrl = "http://homestead.test/api";
+const baseApiUrl = "http://127.0.0.1:8000/api";
 
 export default {
   props: ["item"],
