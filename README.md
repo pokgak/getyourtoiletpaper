@@ -6,15 +6,17 @@ The backend is written using the Laravel framework and frontend in Vue.js.
 
 ## Backend
 
-We uses Homestead for development. To start the server run `vagrant up` in this directory.
+We uses Homestead for development. To start the server run `vagrant up --provision` in this directory.
 
 Before using the API, create table and seed the database: `DB_HOST=127.0.0.1 php artisan migrate:refresh --seed`
 
-The API is available at `http://homestead.test/api`
+- URL for application: `http://127.0.0.1:8000/home`:
+    - Existing items can be modified/deleted
+    - New items can be added
+
+The API is available at `http://127.0.0.1:8000/api`.
 
 Available endpoints:
-
-- `/`: Laravel default welcome page
 - `/api/items`:
     - `GET`: get list of all items
 - `/api/item`:
