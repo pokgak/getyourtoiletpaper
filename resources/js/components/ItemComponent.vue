@@ -43,7 +43,7 @@
 
     <img
       src="http://www.staples-3p.com/s7/is/image/Staples/m005185536_sc7?$std$"
-      class="card-img-top"
+      class="card-img-bottom"
       alt="..."
     />
   </div>
