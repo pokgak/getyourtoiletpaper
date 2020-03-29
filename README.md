@@ -2,6 +2,8 @@
 
 The backend is written using the Laravel framework and frontend in Vue.js.
 
+![screenshot](https://user-images.githubusercontent.com/20373062/77838567-64887c00-7175-11ea-988f-11eb78e7225a.png)
+
 ## Backend
 
 We uses Homestead for development. To start the server run `vagrant up` in this directory.
