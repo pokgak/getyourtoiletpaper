@@ -8,7 +8,7 @@ The backend is written using the Laravel framework and frontend in Vue.js.
 
 We uses Homestead for development. To start the server run `vagrant up` in this directory.
 
-Before using the API, create table and seed the database: `php artisan migrate:refresh --seed`
+Before using the API, create table and seed the database: `DB_HOST=127.0.0.1 php artisan migrate:refresh --seed`
 
 The API is available at `http://homestead.test/api`
 
