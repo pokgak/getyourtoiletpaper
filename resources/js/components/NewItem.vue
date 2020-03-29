@@ -12,6 +12,15 @@
     </div>
 
     <div v-show="this.isCreateMode">
+      <div class="card-header text-right">
+        <button type="submit" class="btn btn-success" v-on:click="createItem">
+          <i class="fa fa-check fa-lg" title="Create item"></i>
+        </button>
+        <button type="reset" class="btn btn-danger" v-on:click="reset">
+          <i class="fa fa-times-circle fa-lg" title="Cancel"></i>
+        </button>
+      </div>
+
       <div class="card-body">
         <input type="text" id="name" class="form-control card-title" v-model="item.name" placeholder="Name of item"/>
         <textarea
@@ -21,15 +30,6 @@
           rows="7"
           placeholder="Description..."
         ></textarea>
-      </div>
-
-      <div class="card-footer text-right">
-        <button type="submit" class="btn btn-success" v-on:click="createItem">
-          <i class="fa fa-check fa-lg" title="Create item"></i>
-        </button>
-        <button type="reset" class="btn btn-danger" v-on:click="reset">
-          <i class="fa fa-times-circle fa-lg" title="Cancel"></i>
-        </button>
       </div>
     </div>
   </div>

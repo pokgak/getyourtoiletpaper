@@ -1,29 +1,33 @@
 <template>
-  <div class="card mb-4" v-show="!this.isDeleted">
-    <img
-      src="http://www.staples-3p.com/s7/is/image/Staples/m005185536_sc7?$std$"
-      class="card-img-top"
-      alt="..."
-    />
-
+<div class="col" v-if="!this.isDeleted">
+  <div class="card mb-4">
     <!-- Display mode -->
     <div v-show="!editMode">
-      <div class="card-body">
-        <h5 class="card-title text-uppercase">{{ item.name }}</h5>
-        <p class="card-text">{{ item.description }}</p>
-      </div>
-      <div class="card-footer text-right">
+        <div class="card-header text-right">
         <button type="button" class="btn btn-primary" v-on:click="editItem">
           <i class="fa fa-pencil-square-o fa-lg" title="Edit Item"></i>
         </button>
+
         <button type="button" class="btn btn-danger" v-on:click="deleteItem">
           <i class="fa fa-trash-o fa-lg" title="Delete Item"></i>
         </button>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-uppercase">{{ item.name }}</h5>
+        <p class="card-text">{{ item.description }}</p>
       </div>
     </div>
 
     <!-- Edit mode only -->
     <div v-show="editMode">
+        <div class="card-header text-right">
+        <button type="submit" class="btn btn-success" v-on:click="submit">
+          <i class="fa fa-check fa-lg" title="Submit"></i>
+        </button>
+        <button type="reset" class="btn btn-danger" v-on:click="reset">
+          <i class="fa fa-times-circle fa-lg" title="Reset"></i>
+        </button>
+      </div>
       <div class="card-body">
         <form>
           <input type="text" id="name" class="form-control card-title" v-model="item.name" />
@@ -35,16 +39,15 @@
           ></textarea>
         </form>
       </div>
-      <div class="card-footer text-right">
-        <button type="submit" class="btn btn-success" v-on:click="submit">
-          <i class="fa fa-check fa-lg" title="Submit"></i>
-        </button>
-        <button type="reset" class="btn btn-danger" v-on:click="reset">
-          <i class="fa fa-times-circle fa-lg" title="Reset"></i>
-        </button>
-      </div>
     </div>
+
+    <img
+      src="http://www.staples-3p.com/s7/is/image/Staples/m005185536_sc7?$std$"
+      class="card-img-top"
+      alt="..."
+    />
   </div>
+</div>
 </template>
 
 <script>

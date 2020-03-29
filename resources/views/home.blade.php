@@ -12,9 +12,7 @@
                     </div>
 
                 @foreach ($items as $item)
-                    <div class="col">
-                        <item-component :item='@json($item)'></item-component>
-                    </div>
+                    <item-component :item='@json($item)'></item-component>
                 @endforeach
                 </div>
         </div>
