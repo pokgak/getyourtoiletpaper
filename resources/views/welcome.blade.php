@@ -70,6 +70,10 @@
                     Get Your Toilet Paper!
                 </div>
 
+                <h3 class="display-3 m-b-md">
+                    In this trying time, everybody should have their toilet paper ready.
+                </h3>
+
                 <div class="links">
                     <a href="{{ url('/home') }}">Browse</a>
                     <a href="{{ url('/edit') }}">Edit Item</a>
