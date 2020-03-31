@@ -1,0 +1,4 @@
+---
+http_port: 80
+nodejs_version: 12
+sys_packages: ['composer', 'php-zip', 'php-xml', 'php-mysql', 'php-mbstring']
