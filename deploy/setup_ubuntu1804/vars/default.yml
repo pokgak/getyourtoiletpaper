@@ -1,0 +1,5 @@
+---
+create_user: pokgak
+# copy_local_key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+get_github_keys: "https://github.com/pokgak.keys"
+sys_packages: [ 'curl', 'vim', 'git', 'ufw']
