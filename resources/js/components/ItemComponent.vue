@@ -51,7 +51,7 @@
 </template>
 
 <script>
-const baseApiUrl = process.env.API_BASE;
+const baseApiUrl = "http://getyourtoiletpaper.pokgak.xyz/api";
 
 export default {
   props: ["item"],
