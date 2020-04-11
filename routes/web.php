@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Item;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use App\Item;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
