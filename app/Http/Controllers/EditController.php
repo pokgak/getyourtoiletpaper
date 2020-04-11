@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Item;
 
-class HomeController extends Controller
+class EditController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('edit', [
+            'items' => Item::all()->toArray(),
+            'baseApi' => env('BASE_API', 'http://127.0.0.1:8000/api')
+        ]);
     }
 }
