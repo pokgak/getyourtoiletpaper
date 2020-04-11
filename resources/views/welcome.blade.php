@@ -75,7 +75,7 @@
                 </h3>
 
                 <div class="links">
-                    <a href="{{ url('/home') }}">Browse</a>
+                    <a href="{{ url('/browse') }}">Browse</a>
                     <a href="{{ url('/edit') }}">Edit Item</a>
                 </div>
             </div>
