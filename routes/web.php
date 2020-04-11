@@ -19,5 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return view('home', ['items' => Item::all()->toArray()]);
+    return view('home', [
+        'items' => Item::all()->toArray(),
+        'baseApi' => env('BASE_API', 'http://127.0.0.1:8000/api')
+    ]);
 });

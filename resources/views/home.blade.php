@@ -12,7 +12,7 @@
                     </div>
 
                 @foreach ($items as $item)
-                    <item-component :item='@json($item)'></item-component>
+                    <item-component :item='@json($item)' :baseApi='$baseApi'></item-component>
                 @endforeach
                 </div>
         </div>

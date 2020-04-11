@@ -51,10 +51,8 @@
 </template>
 
 <script>
-const baseApiUrl = "http://getyourtoiletpaper.pokgak.xyz/api";
-
 export default {
-  props: ["item"],
+  props: ["item", "baseApi"],
   data: function() {
     return {
       isDeleted: false,
@@ -80,12 +78,12 @@ export default {
     deleteItem: function() {
       console.log("DELETE!" + this.item.id);
       // TODO: confirm popup
-      axios.delete(baseApiUrl + "/item/" + this.item.id);
+      axios.delete(this.baseApi + "/item/" + this.item.id);
       this.isDeleted = true;
     },
     submit: function() {
       console.log("SUBMIT!" + this.item.id);
-      axios.put(baseApiUrl + "/item", this.item);
+      axios.put(this.baseApi + "/item", this.item);
 
       this.editMode = false;
     },
