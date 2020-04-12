@@ -19,6 +19,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-primary">Add to cart</button>
+                    </div>
                 </div>
             @endforeach
         </div>
