@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\CartItem;
+use App\Item;
 
 class CartItemController extends Controller
 {
@@ -25,8 +26,16 @@ class CartItemController extends Controller
      */
     public function index()
     {
+        $cartItems = collect();
+        $this->listItems()->each(function ($item) use (&$cartItems) {
+            $item_name = Item::find($item->item_id)->value('name');
+            $cartItems = $cartItems->concat([
+                ['name' => $item_name, 'quantity' => $item->quantity],
+            ]);
+        });
+
         return view('cart', [
-            'cartItems' => $this->listItems(),
+            'cartItems' => $cartItems,
         ]);
     }
 
