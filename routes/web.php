@@ -21,8 +21,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/edit', 'EditController@index');
-Route::get('/browse', 'BrowseController@index');
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::get('/edit', 'EditController@index')->name('edit');
+Route::get('/browse', 'BrowseController@index')->name('browse');
+Route::get('/cart', 'CartItemController@index')->name('cart');
