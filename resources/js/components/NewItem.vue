@@ -36,7 +36,7 @@
 </template>
 
 <script>
-const baseApiUrl = "http://getyourtoiletpaper.pokgak.xyz/api";
+const baseApi = process.env.MIX_BASE_API;
 
 export default {
   mounted() {
@@ -55,7 +55,7 @@ export default {
       },
       createItem: function () {
         console.log("creating!")
-        axios.post(baseApiUrl + "/item", this.item)
+        axios.post(baseApi + "/item", this.item)
         this.isCreateMode = false
       },
       reset: function () {

@@ -51,8 +51,10 @@
 </template>
 
 <script>
+const baseApi = process.env.MIX_BASE_API;
+
 export default {
-  props: ["item", "baseApi"],
+  props: ["item"],
   data: function() {
     return {
       isDeleted: false,
@@ -71,19 +73,19 @@ export default {
       console.log(this.item.id);
     },
     editItem: function() {
-      console.log("EDIT!" + this.item.id);
+      console.log("EDIT!" + this.item.id + baseApi);
       this.oldItem = this.item;
       this.editMode = true;
     },
     deleteItem: function() {
       console.log("DELETE!" + this.item.id);
       // TODO: confirm popup
-      axios.delete(this.baseApi + "/item/" + this.item.id);
+      axios.delete(baseApi + "/item/" + this.item.id);
       this.isDeleted = true;
     },
     submit: function() {
       console.log("SUBMIT!" + this.item.id);
-      axios.put(this.baseApi + "/item", this.item);
+      axios.put(baseApi + "/item", this.item);
 
       this.editMode = false;
     },
