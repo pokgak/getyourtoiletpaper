@@ -2,27 +2,48 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Item;
 
 class CartController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * Get cart for specified user.
      */
-    public function __construct()
+    public function getCart()
     {
-        $this->middleware('auth');
+        return "GET CART";
     }
 
     /**
-     * Show the products page.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * List items in cart
      */
-    public function index()
+    public function listItems()
     {
-        return view('cart');
+        return "LIST CART ITEMS";
+    }
+
+    /**
+     * Adds new item to the cart.
+     */
+    public function addItem(Request $request)
+    {
+        return $request->all();
+    }
+
+    /**
+     * Change quantity of item in cart.
+     */
+    public function changeQuantity(Request $request)
+    {
+        return $request->all();
+    }
+
+    /**
+     * Remove item from cart.
+     */
+    public function removeItem()
+    {
+        return "REMOVE ITEM";
     }
 }
