@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Item;
 
-class GytpController extends Controller
+class BrowseController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,18 +14,7 @@ class GytpController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-
         $this->items = Item::all()->toArray();
-    }
-
-    /**
-     * Show the product vendor edit page.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function edit()
-    {
-        return view('edit');
     }
 
     /**
@@ -33,8 +22,10 @@ class GytpController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function browse()
+    public function index()
     {
-        return view('browse');
+        return view('browse', [
+            'items' => Item::all(),
+        ]);
     }
 }

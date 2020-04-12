@@ -19,10 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/browse', function () {
-    return view('browse');
-});
-
 Auth::routes();
 
 Route::get('/edit', 'EditController@index');
+Route::get('/browse', 'BrowseController@index');
