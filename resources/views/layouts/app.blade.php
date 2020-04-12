@@ -53,7 +53,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="#" role="button" title="View cart"><i class="fa fa-lg fa-shopping-cart"></i></a>
+                            <a class="nav-link" href="{{ route('cart') }}" role="button" title="View cart"><i class="fa fa-lg fa-shopping-cart"></i></a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
