@@ -1,10 +1,10 @@
 <template>
   <div class="row">
     <div class="col">
-      <p>{{ item.name }}</p>
+      <p class="card-text">{{ item.name }}</p>
     </div>
     <div class="col-2">
-      <input class="form-control" type="number" id="quantity" name="quantity" min="1" v-model="item.quantity"/>
+      <input class="form-control" type="number" id="quantity" name="quantity" min="1" v-model="quantity"/>
     </div>
     <div class="col-1">
       <button type="button" class="btn btn-danger">
