@@ -11,7 +11,11 @@
           <div class="input-group">
             <input type="number" id="quantity" class="form-control" v-model="quantity" min="1" />
             <div class="input-group-append">
-              <button type="button" class="btn btn-outline-secondary" v-on:click="addToCart">Add to cart</button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                v-on:click="addToCart"
+              >Add to cart</button>
             </div>
           </div>
         </div>

@@ -46,8 +46,14 @@ class CartItemController extends Controller
     /**
      * Remove item from cart.
      */
-    public function removeItem()
+    public function removeItem(Request $request)
     {
-        return "REMOVE ITEM";
+        $user_id = $request->input('user_id');
+        $item_id = $request->input('item_id');
+
+        return CartItem::where('user_id', $user_id)
+                       ->where('item_id', $item_id)
+                       ->firstOrFail()
+                       ->delete();
     }
 }

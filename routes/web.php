@@ -27,10 +27,12 @@ Route::get('/browse', 'BrowseController@index')->name('browse');
 Route::get('/cart', function () {
     $cartItems = collect();
     CartItem::where('user_id', Auth::id())->get()->each(function ($ci) use (&$cartItems) {
-        $item_name = App\Item::find($ci->item_id)->name;
+        $item = App\Item::find($ci->item_id);
         $cartItems = $cartItems->concat([
             [
-                'name' => $item_name,
+                'user_id' => Auth::id(),
+                'item_id' => $item->id,
+                'name' => $item->name,
                 'quantity' => $ci->quantity,
             ]
         ]);

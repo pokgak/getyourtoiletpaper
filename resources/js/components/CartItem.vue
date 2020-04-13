@@ -7,7 +7,7 @@
       <p class="card-text text-center">{{ quantity }}</p>
     </div>
     <div class="col-1">
-      <button type="button" class="btn btn-danger">
+      <button type="button" class="btn btn-danger" v-on:click="removeFromCart">
         <i class="fa fa-trash-o fa-md" title="Delete Item"></i>
       </button>
     </div>
@@ -21,8 +21,18 @@ export default {
   props: ["item"],
   data: function() {
     return {
-        quantity: this.item.quantity,
+      quantity: this.item.quantity
     };
+  },
+  methods: {
+    removeFromCart: function() {
+      axios.delete(baseApi + "/cart", {
+        data: {
+          user_id: this.item.user_id,
+          item_id: this.item.item_id
+        }
+      });
+    }
   }
 };
 </script>
