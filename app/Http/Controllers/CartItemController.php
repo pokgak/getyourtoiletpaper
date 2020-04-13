@@ -44,14 +44,6 @@ class CartItemController extends Controller
     }
 
     /**
-     * Change quantity of item in cart.
-     */
-    public function changeQuantity(Request $request)
-    {
-        return $request->all();
-    }
-
-    /**
      * Remove item from cart.
      */
     public function removeItem()
