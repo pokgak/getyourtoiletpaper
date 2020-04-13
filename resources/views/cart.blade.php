@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8">
-            <h2 class="mb-8">My Cart</h2>
+            <h2 class="mb-8 text-center">My Cart</h2>
 
                 <div class="card">
                     <div class="card-body">

@@ -4,28 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8">
-            <h2 class="mb-8">Browse</h2>
+            <h2 class="mb-8 text-center">Browse</h2>
 
             @foreach ($items as $item)
-                <div class="card mb-2">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <img src="http://www.staples-3p.com/s7/is/image/Staples/m005185536_sc7?$std$" alt="..."/>
-                            </div>
-                            <div class="col">
-                                <h3 class="card-title text-uppercase">{{ $item->name }}</h3>
-                                <p class="card-text">{{ $item->description }}</p>
-                                <div class="input-group">
-                                    <input type="number" class="form-control" value="1" min="1">
-                                    <div class="input-group-append">
-                                        <button type="button" class="btn btn-outline-secondary">Add to cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <browse-item :item='@json($item)' :user='@json(Auth::user())'></browse-item>
             @endforeach
         </div>
     </div>
