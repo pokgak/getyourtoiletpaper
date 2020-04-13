@@ -2,7 +2,7 @@
 
 The backend is written using the Laravel framework and frontend in Vue.js.
 
-- URL for application: `http://127.0.0.1:8000`:
+- URL for application: `http://getyourtoiletpaper.pokgak.xyz`:
     - `/edit`:
         - Existing items can be modified/deleted
         - New items can be added
