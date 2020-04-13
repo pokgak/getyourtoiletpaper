@@ -10,39 +10,6 @@ use App\Item;
 class CartItemController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the products page.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        $cartItems = collect();
-        $this->listItems()->each(function ($ci) use (&$cartItems) {
-            $item_name = Item::find($ci->item_id)->name;
-            $cartItems = $cartItems->concat([
-                [
-                    'name' => $item_name,
-                    'quantity' => $ci->quantity,
-                ]
-            ]);
-        });
-
-        return view('cart', [
-            'cartItems' => $cartItems,
-        ]);
-    }
-
-    /**
      * List items in cart
      */
     public function listItems()

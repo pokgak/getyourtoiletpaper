@@ -1,5 +1,6 @@
 <?php
 
+use App\CartItem;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,4 +24,19 @@ Auth::routes();
 
 Route::get('/edit', 'EditController@index')->name('edit');
 Route::get('/browse', 'BrowseController@index')->name('browse');
-Route::get('/cart', 'CartItemController@index')->name('cart');
+Route::get('/cart', function () {
+    $cartItems = collect();
+    CartItem::where('user_id', Auth::id())->get()->each(function ($ci) use (&$cartItems) {
+        $item_name = App\Item::find($ci->item_id)->name;
+        $cartItems = $cartItems->concat([
+            [
+                'name' => $item_name,
+                'quantity' => $ci->quantity,
+            ]
+        ]);
+    });
+
+    return view('cart', [
+        'cartItems' => $cartItems,
+    ]);
+})->name('cart')->middleware('auth');
