@@ -27,10 +27,13 @@ class CartItemController extends Controller
     public function index()
     {
         $cartItems = collect();
-        $this->listItems()->each(function ($item) use (&$cartItems) {
-            $item_name = Item::find($item->item_id)->value('name');
+        $this->listItems()->each(function ($ci) use (&$cartItems) {
+            $item_name = Item::find($ci->item_id)->name;
             $cartItems = $cartItems->concat([
-                ['name' => $item_name, 'quantity' => $item->quantity],
+                [
+                    'name' => $item_name,
+                    'quantity' => $ci->quantity,
+                ]
             ]);
         });
 

@@ -26,3 +26,15 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+
+$factory->afterCreating(User::class, function ($user, Faker $faker) {
+    $item_ids = App\Item::all()->pluck('id')->toArray();
+    $cartItems = factory(App\CartItem::class, 5)->make([
+        'user_id' => $user->id,
+    ])->each(function ($ci) use (&$faker, $item_ids) {
+        $ci->item_id = $faker->unique()->randomElement($item_ids);
+        $ci->quantity = $faker->randomDigitNotNull;
+    });
+    $user->cartItems()->createMany($cartItems->toArray());
+    $faker->unique($reset = true)->randomElement($item_ids);
+});
