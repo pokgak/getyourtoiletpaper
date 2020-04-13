@@ -10,10 +10,10 @@
                     <div class="card-body">
                         <div class="row mb-4">
                             <div class="col">
-                                <h5 class="cart-title">Name</h5>
+                                <h5 class="card-title text-left">Name</h5>
                             </div>
                             <div class="col-2">
-                                <h5 class="cart-title">Quantity</h5>
+                                <h5 class="card-title text-center">Quantity</h5>
                             </div>
                             <div class="col-1">
                                 {{-- <h5 class="cart-title">test</h5> --}}

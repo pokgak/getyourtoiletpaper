@@ -1,17 +1,16 @@
 <template>
-  <div class="row">
+  <div class="row mb-3">
     <div class="col">
-      <p class="card-text">{{ item.name }}</p>
+      <p class="card-text text-uppercase">{{ item.name }}</p>
     </div>
     <div class="col-2">
-      <input class="form-control" type="number" id="quantity" name="quantity" min="1" v-model="quantity"/>
+      <p class="card-text text-center">{{ quantity }}</p>
     </div>
     <div class="col-1">
       <button type="button" class="btn btn-danger">
         <i class="fa fa-trash-o fa-md" title="Delete Item"></i>
       </button>
     </div>
-    <div class="mb-3"></div>
   </div>
 </template>
 
