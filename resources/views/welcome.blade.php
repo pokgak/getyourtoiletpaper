@@ -77,6 +77,7 @@
                 <div class="links">
                     <a href="{{ url('/browse') }}">Browse</a>
                     <a href="{{ url('/edit') }}">Edit Item</a>
+                    <a href="{{ url('https://github.com/pokgak/getyourtoiletpaper') }}">View on Github<i class="fa fa-github"></a>
                 </div>
             </div>
         </div>
