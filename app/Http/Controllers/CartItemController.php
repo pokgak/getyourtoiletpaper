@@ -22,7 +22,15 @@ class CartItemController extends Controller
      */
     public function addItem(Request $request)
     {
-        return $request->all();
+        $user_id = $request->input('user_id');
+        $item_id = $request->input('item_id');
+        $quantity = intval($request->input('quantity'));
+
+        return CartItem::updateOrCreate([
+            'user_id' => $user_id,
+            'item_id' => $item_id,
+            'quantity' => $quantity,
+        ]);
     }
 
     /**
