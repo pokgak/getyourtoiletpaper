@@ -26,11 +26,21 @@ class CartItemController extends Controller
         $item_id = $request->input('item_id');
         $quantity = intval($request->input('quantity'));
 
-        return CartItem::updateOrCreate([
-            'user_id' => $user_id,
-            'item_id' => $item_id,
-            'quantity' => $quantity,
-        ]);
+        $ci = CartItem::where('user_id', $user_id)
+                ->where('item_id', $item_id)
+                ->first();
+        if (empty($ci)) {
+            $new = CartItem::create([
+                'user_id' => $user_id,
+                'item_id' => $item_id,
+                'quantity' => $quantity,
+            ]);
+            return $new;
+        } else {
+            $ci->quantity = $ci->quantity + $quantity;
+            $ci->save();
+            return $ci;
+        }
     }
 
     /**

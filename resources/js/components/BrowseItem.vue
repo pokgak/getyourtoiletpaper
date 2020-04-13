@@ -37,7 +37,7 @@ export default {
         item_id: this.item.id,
         quantity: this.quantity
       };
-      axios.post(baseApi + "/cart", cartItem);
+      axios.put(baseApi + "/cart", cartItem);
     }
   }
 };

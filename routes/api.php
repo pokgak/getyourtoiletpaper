@@ -20,7 +20,6 @@ Route::delete('/item/{id}', 'ItemController@deleteItem');
 Route::put('/item', 'ItemController@updateItem');
 
 Route::get('/cart', 'CartItemController@getCart');
-Route::post('/cart', 'CartItemController@addItem');
-Route::put('/cart', 'CartItemController@changeQuantity');
+Route::match(['post', 'put'], '/cart', 'CartItemController@addItem');
 Route::delete('/cart', 'CartItemController@removeItem');
 Route::get('/cart/list', 'CartItemController@listItems');
