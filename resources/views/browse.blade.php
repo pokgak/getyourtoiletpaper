@@ -16,7 +16,12 @@
                             <div class="col">
                                 <h3 class="card-title text-uppercase">{{ $item->name }}</h3>
                                 <p class="card-text">{{ $item->description }}</p>
-                                <button type="button" class="btn btn-primary">Add to cart</button>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" value="1" min="1">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-outline-secondary">Add to cart</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
