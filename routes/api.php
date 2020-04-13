@@ -19,8 +19,8 @@ Route::post('/item', 'ItemController@createNewItem');
 Route::delete('/item/{id}', 'ItemController@deleteItem');
 Route::put('/item', 'ItemController@updateItem');
 
-Route::get('/cart', 'CartController@getCart');
-Route::post('/cart', 'CartController@addItem');
-Route::put('/cart', 'CartController@changeQuantity');
-Route::delete('/cart', 'CartController@removeItem');
-Route::get('/cart/list', 'CartController@listItems');
+Route::get('/cart', 'CartItemController@getCart');
+Route::post('/cart', 'CartItemController@addItem');
+Route::put('/cart', 'CartItemController@changeQuantity');
+Route::delete('/cart', 'CartItemController@removeItem');
+Route::get('/cart/list', 'CartItemController@listItems');
